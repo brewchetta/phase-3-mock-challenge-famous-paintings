@@ -1,6 +1,7 @@
 # This will delete any existing rows from the Museum and Artist tables
 # so you can run the seed file multiple times without having duplicate entries in your database
 puts "Deleting Artist/Museum data..."
+Painting.destroy_all
 Artist.destroy_all
 Museum.destroy_all
 
@@ -19,10 +20,10 @@ pollock = Artist.create(first_name: "Jackson", last_name: "Pollock", birthyear: 
 rembrandt = Artist.create(first_name: "Rembrandt", last_name: "Harmenszoon", birthyear: 1606, style: "baroque")
 
 puts "Creating paintings..."
-# ********************************************************************
-# * TODO: create paintings! Remember, a painting belongs to a artist *
-# * and a museum.                                                    *
-# ********************************************************************
+10.times do
+  Painting.create(title: Faker::Games::SuperMario.character, price_in_us_dollars: rand(100000000),
+  artist: Artist.all[rand(Artist.all.count)], museum: Museum.all[rand(Museum.all.count)])
+end
 
 puts "Deleting your entire github"
 sleep 1
