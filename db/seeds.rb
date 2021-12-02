@@ -22,7 +22,7 @@ puts "Creating paintings..."
 
 # create an easy method to get a random museum
 def random_museum
-  Museum.all[rand(Museum.length)]
+  Museum.all[rand(Museum.all.length)]
 end
 
 Painting.create(title: "Starry Night", price_in_us_dollars: 1000, museum: random_museum, artist: van_gogh)
