@@ -1,5 +1,5 @@
 class Artist < ActiveRecord::Base
-  has_many :paintings
+  has_many :paintings, dependent: :destroy
   has_many :museums, through: :paintings
 
   def full_name

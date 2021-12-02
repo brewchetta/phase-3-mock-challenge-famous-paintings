@@ -1,5 +1,5 @@
 class Museum < ActiveRecord::Base
-  has_many :paintings
+  has_many :paintings, dependent: :destroy
   has_many :artists, through: :paintings
 
   def combined_value
