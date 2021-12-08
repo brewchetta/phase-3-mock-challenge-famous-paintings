@@ -19,12 +19,10 @@ pollock = Artist.create(first_name: "Jackson", last_name: "Pollock", birthyear: 
 rembrandt = Artist.create(first_name: "Rembrandt", last_name: "Harmenszoon", birthyear: 1606, style: "baroque")
 
 puts "Creating paintings..."
-# ********************************************************************
-# * TODO: create paintings! Remember, a painting belongs to a artist *
-# * and a museum.                                                    *
-# ********************************************************************
+Painting.create(title: "Mona Lisa", price_in_us_dollars: 100, artist: van_gogh, museum: moma)
+Painting.create(title: "Starry Night", price_in_us_dollars: 200, artist: van_gogh, museum: louvre)
+Painting.create(title: "Droopy Painting 1", price_in_us_dollars: 300, artist: dali, museum: moma)
+Painting.create(title: "Droopy Painting 2", price_in_us_dollars: 100, artist: dali, museum: louvre)
+Painting.create(title: "Droopy Painting 3", price_in_us_dollars: 250, artist: dali, museum: accademia)
 
-puts "Deleting your entire github"
-sleep 1
-puts "Haha jk!"
 puts "Seeding completed..."
